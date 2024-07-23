@@ -1,0 +1,660 @@
+body {
+     font-family: "Poppins", sans-serif;
+    background: linear-gradient( to right top,
+          #263d62,
+          #2a507b,
+          #2a6595,
+          #267baf,
+          #1791c8);
+	display: flex;
+}
+
+/* 移除所有連結的下劃線，使連結文字顯示更為簡潔 */
+a {
+  text-decoration: none;
+}
+
+/* 移除所有列表項目的點，讓列表更簡潔 */
+li {
+  list-style: none;
+}
+
+/* =======navbar  start */
+/*.navbar {
+    height: 85vh;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100px;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.navbar:hover,
+.navbar.expanded {
+    width: 150px;
+}
+
+.hamburger-menu {
+    display: block;
+    padding: 15px;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border-radius: 0px 36px 36px 0px;
+    background: linear-gradient(to right top, rgb(246, 222, 136) 20%, rgb(242, 128, 128) 80%);
+    border: white solid 1px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 15px;
+    color: black;
+    margin-bottom: 15px;
+    
+}
+
+.menu-item a {
+    display: none;
+    margin-left: 10px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar:hover .menu-item a,
+.navbar.expanded .menu-item a {
+    display: inline;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+/* =======navbar  end */
+
+/* =======main content  start */
+
+
+.main-content {
+    
+   min-height: 100vh;
+     /* Adjusted to match the navbar's initial width */
+    transition: margin-left 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*.navbar:hover ~ .main-content,
+.navbar.expanded ~ .main-content {
+    margin-left: 150px;
+}
+
+.sidebar {
+    width: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    right:0;
+    /* background-color: aqua; */
+
+/*
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    transition: background 0.3s;
+    margin-top: 50px;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}*/
+.goal-img{
+    margin-left: 150px; 
+    height: 80vh;
+}
+.goal-content{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.content {
+    flex-grow: 1;
+    margin: 40px;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 92vh;
+    background-color: white;
+    border-radius: 36px;
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 10px;
+    position: relative;
+    
+}
+
+.tooltip-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: #333; */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    margin-top: 5px;
+}
+
+.tooltip-btn:hover::after {
+    opacity: 1;
+}
+
+
+
+p.text-right {
+    text-align: right;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 两列布局 */
+    gap: 0px 20px;
+    /* 10px纵向间距，20px横向间距 */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label.contact-label {
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+input,
+select {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 26px;
+}
+
+.submit-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    margin-top: 20px;
+    
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+/* 日歷========start */
+.cr-main-content {
+    display: inline-table;
+    height: 100vh;
+    margin-left: 80px; /* Adjusted to match the navbar's initial width */
+    transition: margin-left 0.3s;
+    box-sizing: border-box;
+    width: 87%;
+}
+.calendar-body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* width: 100%; */
+}
+.db-calendar-body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0;
+    width: 100%;
+  
+}
+
+.db-container {
+    text-align: center;
+   
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    background-color: #fff;
+}
+
+.status {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#currentMonth {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 100%;
+}
+
+.day-header {
+    font-weight: bold;
+}
+
+.day {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 35px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.day.past {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+}
+
+.day.not-signed {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+
+.day.signed {
+    color: #27ae60;
+    border-color: #27ae60;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+
+.day.future {
+    color: #bdc3c7;
+    border-color: #bdc3c7;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+
+.day:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+.day:hover{
+    box-shadow:rgba(50,50,93,0.25) 0px 2px 0px -1px,rgba(0,0,0,0.3) 0px 3px 3px -1px ;
+    transform: scale(1.02);
+}
+/* =================db-calendar */
+.db-day {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 35px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+.db-day.past {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+}
+
+.db-day.not-signed {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+
+.db-day.signed {
+    color: #27ae60;
+    border-color: #27ae60;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+
+.db-day.future {
+    color: #bdc3c7;
+    border-color: #bdc3c7;
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+
+.db-day:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 3px 2px rgb(74, 74, 74)
+
+}
+.db-day:hover{
+    box-shadow:rgba(50,50,93,0.25) 0px 2px 0px -1px,rgba(0,0,0,0.3) 0px 3px 3px -1px ;
+    transform: scale(1.02);
+}
+/* =================db-calendar */
+
+/* 日歷========end */
+/* bodyreport========start */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+} */
+.rp-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.section p {
+    margin: 5px 0;
+}
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* bodyreport========end */
+/* =============更改密碼start 框框 */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: rgb(252, 250, 237);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid hwb(0 22% 78%);
+    width: 60%; /* Could be more or less, depending on screen size */
+    font-size: xx-large;
+}
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+/* =============更改密碼end 框框 */
+#nickname,#chooseface {
+    border: none;
+    outline: none;
+}
+
+/* =========RWD====Start */
+@media screen and (max-width:768px){
+    .goal-img{
+        display: none;
+    }
+    .goal-content{
+        grid-template-columns: 1fr;
+    }
+    .rp-container {
+        width: 70%;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .cr-main-content {
+        margin-left: 13%;
+        width: 80%;
+        
+    }
+    .calendar-body {
+        flex-direction: column;
+        height: 100vh; 
+        justify-content: center; 
+        padding: 10px;
+    }
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+    .calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+    .day {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+    }
+    .day-header {
+        font-size: 14px;
+    }
+    }
+    
+    
+
+/* =========RWD====End */
+/*====0623========*/
+#sidebar {
+  position: sticky;
+  top: 0px;
+  width: 70px;
+  height: 700px;
+  min-width: 70px;
+  z-index: 1000;
+  transition: all 0.25s ease-in-out;
+  background-color: transparent;
+  display: flex;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+/* 展開側邊欄時，寬度和最小寬度增加到 260px */
+#sidebar.expand {
+  width: 190px;
+  min-width: 190px;
+}
+
+/* 切換按鈕樣式，背景透明，設置鼠標樣式為指針，邊框為 0，內邊距為 1rem 1.5rem */
+.toggle-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  padding: 1rem 1.5rem;
+}
+
+/* 切換按鈕內圖標的樣式，字體大小為 1.5rem，顏色為白色 */
+.toggle-btn i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* 側邊欄 logo 的樣式，設置上下居中 */
+.sidebar-logo {
+  margin: auto 0;
+}
+
+/* 側邊欄 logo 連結的樣式，顏色為白色，字體大小為 1.15rem，字體粗細為 600 */
+.sidebar-logo a {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* 當側邊欄未展開時，隱藏 logo 和連結中的 span */
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+  display: none;
+}
+
+/* 側邊欄導航的樣式，設置上下內邊距為 2rem，自適應填充剩餘空間 */
+.sidebar-nav {
+  padding: 2rem 0;
+  flex: 1 1 auto;
+}
+
+/* 側邊欄連結的樣式，設置內邊距，顏色為白色，塊級顯示，字體大小為 0.9rem，強制換行，左邊框為透明 */
+a.sidebar-link {
+  padding: 0.625rem 1.625rem;
+  color: #fff;
+  display: block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-left: 3px solid transparent;
+}
+/* 子功能文字置中*/
+.childsl{
+	text-align: center;
+}
+/* 側邊欄連結中的圖標樣式，字體大小為 1.1rem，右邊距為 0.75rem */
+.sidebar-link i {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+/* 側邊欄連結的滑鼠懸停效果，背景顏色變為半透明白色，左邊框顏色變為 #f2991b */
+a.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+  border-left: 3px solid #f2991b;
+}
+
+/* 側邊欄項目的相對定位 */
+.sidebar-item {
+  position: relative;
+}
+
+/* 側邊欄未展開時，下拉菜單樣式設置為絕對定位，背景顏色為 #f7af28，無內邊距，最小寬度為 15rem，默認不顯示 */
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  background-color: #f7af28;
+  padding: 0;
+  min-width: 15rem;
+  display: none;
+}
+
+/* 當滑鼠懸停時顯示下拉菜單，最大高度為 15em，寬度為 100%，透明度為 1 */
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+  display: block;
+  max-height: 15em;
+  width: 100%;
+  opacity: 1;
+}
+
+/* 展開側邊欄時，連結上的展開圖標，右側邊距為 1.5rem */
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+  border: solid;
+  border-width: 0 0.075rem 0.075rem 0;
+  content: "";
+  display: inline-block;
+  padding: 2px;
+  position: absolute;
+  right: 1.5rem;
+}
+
+/* icon圖標樣式，寬度為 20px */
+.icon-type {
+  width: 20px;
+}
+
+
+
